@@ -1,2 +1,28 @@
-# tic_tac_toe
-# Tic Tac Toe Game  A classic Tic Tac Toe implementation in [language] with [key features]. This project includes: - Player vs Player mode - Simple console-based interface - Win/draw detection logic - Clean, commented code  Perfect for beginners to understand basic game logic and [language] fundamentals.
+# Tic Tac Toe Game
+
+![Tic Tac Toe Demo](demo.gif) <!-- If you have a GIF/screenshot -->
+
+A classic implementation of the Tic Tac Toe game in [Python/JavaScript/etc.]. This project demonstrates fundamental programming concepts while providing an enjoyable gaming experience.
+
+## Features
+- Player vs Player gameplay
+- Interactive console-based interface
+- Real-time board display after each move
+- Comprehensive win/draw detection
+- Input validation to prevent errors
+- Clean, modular code with comments
+
+## How to Play
+1. Players take turns entering numbers (1-9) corresponding to board positions
+2. Player 1 is X, Player 2 is O
+3. First player to get 3 marks in a row (horizontally, vertically, or diagonally) wins
+4. Game ends in a draw if all squares are filled without a winner
+
+## Code Structure
+- `main.[ext]`: Core game logic and flow
+- `game.[ext]`: Contains board display and win condition checks
+- `player.[ext]`: Handles player moves and input validation
+
+## Installation & Usage
+```bash
+[Include any installation/run commands here]
