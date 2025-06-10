@@ -1,0 +1,86 @@
+<StartScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+
+        Label:
+            text: 'Tic Tac Toe'
+            font_size: 40
+            color: 1, 0.5, 0, 1  # Orange color
+            bold: True
+            font_name: 'fonts/Roboto-Bold.ttf'  # Use a custom font if available
+
+        Spinner:
+            id: spinner
+            text: "Select Mode"
+            values: ("Easy", "Normal", "Hard", "2 Player")
+            size_hint: (1, 0.2)
+            background_color: 0.2, 0.6, 1, 1  # Light blue
+            color: 1, 1, 1, 1  # White text
+            font_name: 'fonts/Roboto-Regular.ttf'
+
+        Button:
+            text: "Start Game"
+            size_hint: (1, 0.2)
+            background_color: 0, 0.7, 0, 1  # Green
+            color: 1, 1, 1, 1  # White text
+            font_name: 'fonts/Roboto-Bold.ttf'
+            on_press: root.start_game()
+
+<GameScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+
+        Label:
+            id: status_label
+            text: 'Game in Progress'
+            font_size: 30
+            color: 0, 0, 0, 1  # Black
+            bold: True
+            font_name: 'fonts/Roboto-Bold.ttf'
+
+        TicTacToeGame:
+            id: game_board
+
+        Button:
+            text: "Reset Game"
+            size_hint: (1, 0.2)
+            background_color: 0.8, 0, 0, 1  # Red
+            color: 1, 1, 1, 1  # White text
+            font_name: 'fonts/Roboto-Bold.ttf'
+            on_press: root.reset_game()
+
+        Button:
+            text: "Back to Start"
+            size_hint: (1, 0.2)
+            background_color: 0.5, 0.5, 0.5, 1  # Gray
+            color: 1, 1, 1, 1  # White text
+            font_name: 'fonts/Roboto-Bold.ttf'
+            on_press: root.go_back()
+
+<TicTacToeGame>:
+    cols: 3
+    rows: 3
+    spacing: 5
+    padding: 5
+
+    canvas.before:
+        Color:
+            rgba: 0.9, 0.9, 0.9, 1  # Light gray background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Button:
+        text: ""
+        font_size: 32
+        background_color: 1, 1, 1, 1  # White
+        color: 0, 0, 0, 1  # Black text
+        on_press: root.make_move(self)
+
+    # Repeat for all 9 buttons...
+
+    
